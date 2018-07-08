@@ -1,28 +1,46 @@
-//
-//  main.cpp
-//  629
-//
-//  Created by 周世婧 on 18/6/29.
-//  Copyright © 2018年 周世婧. All rights reserved.
-//
-
-#include <iostream>
-int main(int argc, const char * argv[])
+#include<iostream>
+#include<fstream>
+using namespace std;
+class people
 {
-    FILE *a;
-    char s1[200];
-    char s2[200];
-    char s3[200];
-    char s4[200];
-    char s5[200];
-    char s6[200];
-    if((a=fopen("/Users/s20171105133/Desktop/6.29 next/File.csv","r"))==0)
+private:
+    string numbers;
+    string name;
+    string sex;
+    string cla;
+    string birthofdate;
+    string phoneNO;
+public:
+    people(string nu=NULL,string na=NULL,string se=NULL,string cl=NULL,string bd=NULL,string ph=NULL):numbers(nu),name(na),sex(se),cla(cl),birthofdate(bd),phoneNO(ph){}
+    
+};
+class CP
+{
+private:
+    string name;
+    int judge;
+public:
+    CP(string na=NULL,int ju=0):name(na),judge(ju){}
+};
+int main()
+{
+    people a[100];
+    CP b[100];
+    int i,l;
+    string numbers;
+    string name;
+    string sex;
+    string cla;
+    string birthofdate;
+    string phoneNO;
+    string judge_name;
+    int judge;
+    int average;
+    string line;
+    ifstream op("studentdate.csv");
+    while(getline(op,line))
     {
-        printf("文件不存在\n");
-    }
-    else
-    {fscanf(a,"%s ,%s ,%s ,%s ,%s ,%s",s1,s2,s3,s4,s5,s6);
-        printf("%s\n%s\n%s\n%s\n%s\n%s\n",s1,s2,s3,s4,s5,s6);
+        
     }
     return 0;
 }
